@@ -36,6 +36,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -44,7 +45,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.Location = new System.Drawing.Point(50, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 32);
@@ -55,7 +56,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.Location = new System.Drawing.Point(50, 50);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 32);
@@ -66,7 +67,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button3.Location = new System.Drawing.Point(50, 88);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(86, 32);
@@ -117,7 +118,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button4.Location = new System.Drawing.Point(50, 126);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(86, 32);
@@ -126,12 +127,24 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button5.Location = new System.Drawing.Point(37, 179);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Refresh";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(147, 169);
+            this.ClientSize = new System.Drawing.Size(147, 224);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.button3);
@@ -163,6 +176,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
