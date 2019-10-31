@@ -50,6 +50,7 @@ namespace Launcher
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Steam\Steam.exe";
             int exitCode;
+            Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
@@ -62,7 +63,7 @@ namespace Launcher
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Battle.net\Battle.net.exe";
             int exitCode;
-
+            Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
@@ -75,7 +76,7 @@ namespace Launcher
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Riot Games\League of Legends\LeagueClient.exe";
             int exitCode;
-
+            Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
@@ -88,7 +89,7 @@ namespace Launcher
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\Uplay.exe";
             int exitCode;
-
+            Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
@@ -96,6 +97,13 @@ namespace Launcher
             }
         }
 
+        static void Delay(int ms, EventHandler action)
+        {
+            var tmp = new Timer { Interval = ms };
+            tmp.Tick += new EventHandler((o, e) => tmp.Enabled = false);
+            tmp.Tick += action;
+            tmp.Enabled = true;
+        }
         private void refreshForm()
         {
             checkSteam();
