@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Timers;
 
 namespace Launcher
 {
@@ -16,15 +17,14 @@ namespace Launcher
         public Form1()
         {
             InitializeComponent();
-
+            timer1.Enabled = true;
             refreshForm();
         }
-         
+
         private void button1_Click(object sender, EventArgs e)
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Steam\Steam.exe";
-            Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
@@ -36,7 +36,6 @@ namespace Launcher
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Battle.net\Battle.net.exe";
-            Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
@@ -48,7 +47,6 @@ namespace Launcher
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Riot Games\League of Legends\LeagueClient.exe";
-            Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
@@ -60,25 +58,13 @@ namespace Launcher
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\Uplay.exe";
-            Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
                
             }
         }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            refreshForm();
-        }
 
-        static void Delay(int ms, EventHandler action)
-        {
-            var tmp = new Timer { Interval = ms };
-            tmp.Tick += new EventHandler((o, e) => tmp.Enabled = false);
-            tmp.Tick += action;
-            tmp.Enabled = true;
-        }
         private void refreshForm()
         {
             checkSteam();
@@ -155,5 +141,9 @@ namespace Launcher
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            refreshForm();
+        }
     }
 }
