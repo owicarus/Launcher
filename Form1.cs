@@ -16,40 +16,14 @@ namespace Launcher
         public Form1()
         {
             InitializeComponent();
-            if (Process.GetProcessesByName("steam").Length > 0)
-            {
-                button1.BackColor = Color.LightGreen;
-                button1.Text = "Running...";
-                button1.Click -= button1_Click;
-            }
 
-            if (Process.GetProcessesByName("Battle.net").Length > 0)
-            {
-                button2.BackColor = Color.LightGreen;
-                button2.Text = "Running...";
-                button2.Click -= button2_Click;
-            }
-
-            if (Process.GetProcessesByName("LeagueClient").Length > 0)
-            {
-                button3.BackColor = Color.LightGreen;
-                button3.Text = "Running...";
-                button3.Click -= button3_Click;
-            }
-
-            if (Process.GetProcessesByName("Uplay").Length > 0)
-            {
-                button4.BackColor = Color.LightGreen;
-                button4.Text = "Running...";
-                button4.Click -= button4_Click;
-            }
+            refreshForm();
         }
          
         private void button1_Click(object sender, EventArgs e)
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Steam\Steam.exe";
-            int exitCode;
             Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
@@ -62,7 +36,6 @@ namespace Launcher
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Battle.net\Battle.net.exe";
-            int exitCode;
             Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
@@ -75,7 +48,6 @@ namespace Launcher
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Riot Games\League of Legends\LeagueClient.exe";
-            int exitCode;
             Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
@@ -88,13 +60,16 @@ namespace Launcher
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\Uplay.exe";
-            int exitCode;
             Delay(1000, (o, a) => refreshForm());
 
             using (Process proc = Process.Start(start))
             {
                
             }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            refreshForm();
         }
 
         static void Delay(int ms, EventHandler action)
@@ -113,12 +88,6 @@ namespace Launcher
             checkLoL();
 
             checkUplay();
-        }
-    
-
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            refreshForm();
         }
 
         private void checkSteam()
@@ -185,5 +154,6 @@ namespace Launcher
                 button4.Text = "Uplay";
             }
         }
+
     }
 }

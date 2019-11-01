@@ -130,20 +130,20 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.Location = new System.Drawing.Point(37, 179);
+            this.button5.Location = new System.Drawing.Point(12, 164);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(123, 23);
             this.button5.TabIndex = 8;
             this.button5.Text = "Refresh";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(147, 224);
+            this.ClientSize = new System.Drawing.Size(147, 198);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox4);
